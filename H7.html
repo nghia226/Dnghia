@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chúc mừng sinh nhật!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      animation: popIn 1s ease-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* ĐỊNH NGHĨA CHO CONTAINER CHỨA ẢNH */
+    .image-container {
+      display: flex; /* Rất quan trọng: Biến container thành flex container */
+      justify-content: center; /* Căn giữa các ảnh con theo chiều ngang */
+      align-items: center; /* Căn giữa các ảnh con theo chiều dọc (nếu có chiều cao khác nhau) */
+      gap: 20px; /* Tạo khoảng cách giữa các ảnh (20px là ví dụ) */
+      margin-top: 30px; /* Khoảng cách từ nội dung phía trên */
+      flex-wrap: wrap; /* Cho phép các ảnh xuống dòng khi không đủ chỗ */
+    }
+
+    /* ĐỊNH NGHĨA CHO TỪNG ẢNH BÊN TRONG CONTAINER */
+    .image-container img { /* Chỉ áp dụng cho thẻ img nằm trong .image-container */
+      width: 250px; /* Chiều rộng cố định cho ảnh */
+      height: auto; /* Chiều cao tự động điều chỉnh để giữ tỷ lệ */
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease-out;
+      /* Bỏ 'display: block', 'margin-left: auto', 'margin-right: auto' ở đây
+         vì .image-container (flexbox) sẽ lo việc căn chỉnh */
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Các phần cho audio và button (nếu có) */
+    audio {
+      display: none; /* Ẩn thẻ audio mặc định */
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #fff;
+      color: #ff6b6b;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff6b6b;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Chúc Tư sinh nhật dui dẻ</h1>
+  <p>Chúc em tất cả những điều tốt đẹp nhất, luôn xinh đẹp, rạng rỡ và hạnh phúc nhé!<3 &lt;3</p>
+
+  <div class="image-container">
+    <img src="D:\KHUYEN\Screenshot 2025-05-27 201022.png" alt="Ảnh 1">
+    <img src="D:\KHUYEN\Screenshot 2025-05-27 204951.png" alt="Ảnh 2">
+	<img src="D:\KHUYEN\Screenshot 2025-04-13 194947.png" alt="Ảnh 2">
+  </div>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("birthdaySong");
+      if (audio) { // Kiểm tra xem thẻ audio có tồn tại không
+        audio.play();
+      }
+    }
+  </script>
+</body>
+</html>
